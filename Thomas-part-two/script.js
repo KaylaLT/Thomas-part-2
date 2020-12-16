@@ -1,44 +1,43 @@
-// variables  ;
-let x= rain;
-let y = " ";
-let newY = " ";
-let greater= ("The yield should be 51.795 bushels per acre." );
-let less= ("The yield should be 40 bushels per acre.");
-var rain = window.prompt ("How many inches of rain fell?");
-var fert = window.prompt("Did you use fertilizer?");
+let rain = window.prompt ("How many inches of rain fell?");
+
+function repeatStringNumTimes (str,) {
+    return str.repeat( rain)
+}
+console.log (repeatStringNumTimes("*", rain)); 
+
+const startBushelYield = 50; 
+let finalYield = null; 
+
+let bushelYield = null;
+let preFert = ("premium");
+let regFert = ("regular");
+
+
+if  (rain >= 20){ 
+    bushelYield = (startBushelYield * 0.9); 
+}
+else if (rain < 10) { 
+    bushelYield = (startBushelYield * 0.8);
+}
+else {
+    bushelYield = startBushelYield;
+}
+
+let fert = window.prompt("Did you use fertilizer?");
 if (fert == "yes") {
-var type = window.prompt("Did you use premium or regular fertilizer? ");
+let fertType = window.prompt("Did you use premium or regular fertilizer? ");
 }
 
+// my fertizler is not adjusting the yield in the console help needed here 
 
-//functions 
-function repeatStringNumTimes(str, num) { 
-    return str.repeat(y); 
+if (fertType =  preFert) {
+    finalYield = bushelYield  * 1.15;
 }
-console.log(repeatStringNumTimes('*', y)); 
+else if (fertType = regFert) { 
+    finalYield =  bushelYield  * 1.1;
+}
+else ( fertType = null);  {
+    finalYield = bushelYield
+}
 
-function bushels() {
-    if (x >= 20) {
-        y == (0.9*50);
-    }
-    else if (x < 10) {
-        y == (0.8*50);
-    }
-    else {
-    y == 50; 
-}
-}
-function updateBushels () {
-if (type == "premium"){
-    (1.15*y) == newY ;
-    console.log(greater);
-}
-else if (type=="regular"){
-     (1.1*y ) == newY;
-    console.log(less);
-}
-else { 
-    r==newY; 
-}
-}
- console.log(repeatStringNumTimes("*", newY));
+console.log ("The yield should be "  + finalYield + " bushels per acre"); 
