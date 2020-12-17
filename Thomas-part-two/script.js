@@ -9,8 +9,7 @@ const startBushelYield = 50;
 let finalYield = null; 
 
 let bushelYield = null;
-let preFert = ("premium");
-let regFert = ("regular");
+
 
 
 if  (rain >= 20){ 
@@ -24,20 +23,24 @@ else {
 }
 
 let fert = window.prompt("Did you use fertilizer?");
-if (fert == "yes") {
-let fertType = window.prompt("Did you use premium or regular fertilizer? ");
-}
+let preFert = ("premium");
+let regFert = ("regular");
 
-// my fertizler is not adjusting the yield in the console help needed here 
 
-if (fertType =  preFert) {
-    finalYield = bushelYield  * 1.15;
+if (fert === "yes") {
+    let fertType = window.prompt("Did you use premium or regular fertilizer?");
+
+if (fertType === preFert) {
+    finalYield = (bushelYield  * 1.15);
 }
-else if (fertType = regFert) { 
-    finalYield =  bushelYield  * 1.1;
+else if (fertType === regFert) { 
+    finalYield =  (bushelYield  * 1.1);
 }
-else ( fertType = null);  {
+}
+else  {
     finalYield = bushelYield
 }
+
+
 
 console.log ("The yield should be "  + finalYield + " bushels per acre"); 
